@@ -5,54 +5,299 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Group Portfolio</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; }
-    h1, h2 { color: #222; }
-    .member, .persona { border: 1px solid #ddd; padding: 16px; margin: 16px 0; border-radius: 8px; }
-    img { width: 120px; height: 120px; object-fit: cover; border-radius: 50%; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f7fb;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+    .container {
+      width: min(1100px, 92%);
+      margin: 0 auto;
+      padding: 32px 0 60px;
+    }
+    header {
+      text-align: center;
+      padding: 24px 0 10px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+      color: #0f172a;
+    }
+
+    header p {
+      margin: 10px auto 0;
+      max-width: 720px;
+      color: #475569;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .typing::after {
+      content: "|";
+      display: inline-block;
+      margin-left: 2px;
+      animation: blink 0.8s infinite;
+      color: #475569;
+    }
+
+    .typing.done::after {
+      content: "";
+    }
+
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      50.01%, 100% { opacity: 0; }
+    }
+
+
+
+
+
+
+
+
+    .section-title {
+      margin: 40px 0 18px;
+      font-size: 1.6rem;
+      color: #0f172a;
+      border-left: 6px solid #2563eb;
+      padding-left: 12px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 22px;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.12);
+    }
+    .member-img, .persona-img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 14px;
+      border: 4px solid #dbeafe;
+    }
+    .member-card h3, .persona-card h3 {
+      margin: 8px 0 6px;
+      text-align: center;
+      color: #0f172a;
+    }
+    .member-card p, .persona-card p {
+      margin: 6px 0;
+      color: #475569;
+      font-size: 0.95rem;
+    }
+    .student-id {
+      text-align: center;
+      font-weight: bold;
+      color: #2563eb;
+    }
+    .tag {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: #dbeafe;
+      color: #1d4ed8;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .persona-top {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .persona-list {
+      padding-left: 18px;
+      margin: 8px 0 0;
+      color: #475569;
+      font-size: 0.94rem;
+    }
+    .note {
+      margin-top: 24px;
+      background: #eff6ff;
+      border-left: 5px solid #2563eb;
+      padding: 16px 18px;
+      border-radius: 12px;
+      color: #334155;
+    }
+    footer {
+      text-align: center;
+      color: #64748b;
+      margin-top: 40px;
+      font-size: 0.92rem;
+    }
+    a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
-  <h1>Our Group Portfolio</h1>
-  <p>Welcome to our group GitHub page.</p>
+<div class="container">
+<!--  <header>-->
+<!--    <h1>Our Group Portfolio</h1>-->
+<!--    <p>-->
+<!--      Welcome to B4-2 group page.-->
+<!--    </p>-->
+<!--    <p>-->
+<!--      This page introduces our group members and presents two project personas.-->
+<!--    </p>-->
+<!--  </header>-->
 
-  <h2>Group Members</h2>
+  <header>
+    <h1>Our Group Portfolio</h1>
+    <p id="typing-line1" class="typing"></p>
+    <p id="typing-line2" class="typing"></p>
+  </header>
 
-  <div class="member">
-    <img src="member1.jpg" alt="Member 1">
-    <p><strong>Name:</strong> Your Name</p>
-    <p><strong>Student ID:</strong> 12345678</p>
-    <p><strong>Introduction:</strong> A short self-introduction.</p>
-  </div>
 
-  <div class="member">
-    <img src="member2.jpg" alt="Member 2">
-    <p><strong>Name:</strong> Member 2 Name</p>
-    <p><strong>Student ID:</strong> 87654321</p>
-    <p><strong>Introduction:</strong> A short self-introduction.</p>
-  </div>
 
-  <div class="member">
-    <img src="member3.jpg" alt="Member 3">
-    <p><strong>Name:</strong> Member 3 Name</p>
-    <p><strong>Student ID:</strong> 87654321</p>
-    <p><strong>Introduction:</strong> A short self-introduction.</p>
-  </div>
 
-  <div class="member">
-    <img src="member4.jpg" alt="Member 4">
-    <p><strong>Name:</strong> Member 4 Name</p>
-    <p><strong>Student ID:</strong> 87654321</p>
-    <p><strong>Introduction:</strong> A short self-introduction.</p>
-  </div>
 
-  <h2>Personas</h2>
+  <section>
+    <h2 class="section-title">Group Members</h2>
+    <div class="grid">
+      <div class="card member-card">
+        <img class="member-img" src="image/zmjjkk.jpg" alt="Member 1 photo">
+        <h3>Zmjjkk</h3>
+        <p class="student-id">Student ID: 2360674</p>
+        <p><strong>Introduction:</strong> 康神开播了？真的假的？</p>
+      </div>
 
-  <div class="persona">
-    <p><strong>Persona 1:</strong> Example user description here.</p>
-  </div>
+      <div class="card member-card">
+        <img class="member-img" src="image/smoggy.jpg" alt="Member 2 photo">
+        <h3>Smoggy</h3>
+        <p class="student-id">Student ID: 2363281</p>
+        <p><strong>Introduction:</strong> 上朝 </p>
+      </div>
 
-  <div class="persona">
-    <p><strong>Persona 2:</strong> Example user description here.</p>
-  </div>
+      <div class="card member-card">
+        <img class="member-img" src="image/CHICHOO.jpg" alt="Member 3 photo">
+        <h3>CHICHOO</h3>
+        <p class="student-id">Student ID: 34567890</p>
+        <p><strong>Introduction:</strong> 111 </p>
+      </div>
+
+      <div class="card member-card">
+        <img class="member-img" src="image/nobody.jpg" alt="Member 4 photo">
+        <h3>nobody</h3>
+        <p class="student-id">Student ID: 45678901</p>
+        <p><strong>Introduction:</strong> 222 </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Project Personas</h2>
+    <div class="grid">
+      <div class="card persona-card">
+        <div class="persona-top">
+          <span class="tag">Primary User (80%)</span>
+        </div>
+        <img class="persona-img" src="https://via.placeholder.com/100/DBEAFE/1D4ED8?text=P1" alt="Persona 1">
+        <h3>Persona 1: Alex Chen</h3>
+        <p><strong>Age:</strong> 20</p>
+        <p><strong>Occupation:</strong> University Student</p>
+        <p><strong>Background:</strong> Alex is a busy student who wants a simple and efficient way to manage tasks, deadlines, and teamwork.</p>
+        <p><strong>Goals:</strong></p>
+        <ul class="persona-list">
+          <li>Finish tasks on time</li>
+          <li>Collaborate easily with teammates</li>
+          <li>Use a clear and user-friendly interface</li>
+        </ul>
+        <p><strong>Pain Points:</strong></p>
+        <ul class="persona-list">
+          <li>Too many deadlines from different courses</li>
+          <li>Difficulty tracking group progress</li>
+          <li>Limited time to learn complex tools</li>
+        </ul>
+      </div>
+
+      <div class="card persona-card">
+        <div class="persona-top">
+          <span class="tag">Edge User (10%)</span>
+        </div>
+        <img class="persona-img" src="https://via.placeholder.com/100/E0E7FF/4338CA?text=P2" alt="Persona 2">
+        <h3>Persona 2: Mia Wong</h3>
+        <p><strong>Age:</strong> 32</p>
+        <p><strong>Occupation:</strong> Part-time Worker & Student</p>
+        <p><strong>Background:</strong> Mia balances study, work, and family responsibilities. She needs flexible access and quick updates on the go.</p>
+        <p><strong>Goals:</strong></p>
+        <ul class="persona-list">
+          <li>Access the project from mobile devices</li>
+          <li>Save time with fast and clear information</li>
+          <li>Stay updated without checking constantly</li>
+        </ul>
+        <p><strong>Pain Points:</strong></p>
+        <ul class="persona-list">
+          <li>Very limited free time</li>
+          <li>Needs mobile-friendly design</li>
+          <li>May miss updates if communication is unclear</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="note">
+      <strong>Note:</strong> Please edit the names, student IDs, profile pictures, and persona details so they match your real group members and your actual project topic. If your teacher wants a stronger connection to the 10-80-10 rule, you can explain that Persona 1 represents the main 80% user group, while Persona 2 represents one important edge 10% user group.
+    </div>
+  </section>
+
+  <footer>
+    <p>Made for Week 2 Homework | GitHub Pages Portfolio</p>
+  </footer>
+</div>
+
+
+<script>
+  const text1 = "Welcome to B4-2-2 EDG.";
+  const text2 = "This page introduces our group members and presents two project personas.";
+
+  const line1 = document.getElementById("typing-line1");
+  const line2 = document.getElementById("typing-line2");
+
+  function typeText(element, text, speed, callback) {
+    let i = 0;
+    element.textContent = "";
+
+    function typing() {
+      if (i < text.length) {
+        element.textContent += text.charAt(i);
+        i++;
+        setTimeout(typing, speed);
+      } else {
+        element.classList.add("done");
+        if (callback) callback();
+      }
+    }
+
+    typing();
+  }
+
+  window.onload = function () {
+    typeText(line1, text1, 80, function () {
+      typeText(line2, text2, 50);
+    });
+  };
+</script>
+
+
 </body>
 </html>
