@@ -3,311 +3,1189 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Group Portfolio</title>
+  <title>B4 Relation Between Generations | Process Portfolio</title>
   <style>
-    * { box-sizing: border-box; }
+    :root {
+      --cream: #fbf4e8;
+      --cream-deep: #f1dfc8;
+      --paper: #fffaf1;
+      --paper-soft: #fff5ed;
+      --mint: #7bd8c4;
+      --mint-dark: #3b9f8f;
+      --sage: #8ea985;
+      --coral: #dd8a73;
+      --clay: #b7795f;
+      --ink: #2d241f;
+      --muted: #71665c;
+      --line: rgba(98, 72, 48, 0.16);
+      --shadow: 0 22px 60px rgba(74, 50, 31, 0.13);
+      --radius-lg: 32px;
+      --radius-md: 22px;
+      --radius-sm: 14px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f5f7fb;
-      color: #1f2937;
-      line-height: 1.6;
-    }
-    .container {
-      width: min(1100px, 92%);
-      margin: 0 auto;
-      padding: 32px 0 60px;
-    }
-    header {
-      text-align: center;
-      padding: 24px 0 10px;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.2rem;
-      color: #0f172a;
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.65;
+      background:
+        radial-gradient(circle at 8% 10%, rgba(123, 216, 196, 0.24), transparent 28rem),
+        radial-gradient(circle at 90% 14%, rgba(221, 138, 115, 0.18), transparent 24rem),
+        linear-gradient(135deg, var(--cream), #fff9ef 42%, #f8ead8);
+      min-height: 100vh;
     }
 
-    header p {
-      margin: 10px auto 0;
-      max-width: 720px;
-      color: #475569;
-      font-size: 1.5rem;
-      font-weight: 700;
-    }
-
-    .typing::after {
-      content: "|";
-      display: inline-block;
-      margin-left: 2px;
-      animation: blink 0.8s infinite;
-      color: #475569;
-    }
-
-    .typing.done::after {
+    body::before {
       content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.28;
+      background-image:
+        linear-gradient(rgba(80, 55, 35, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(80, 55, 35, 0.04) 1px, transparent 1px);
+      background-size: 44px 44px;
+      z-index: -1;
     }
 
-    @keyframes blink {
-      0%, 50% { opacity: 1; }
-      50.01%, 100% { opacity: 0; }
-    }
-
-
-
-
-
-
-
-
-    .section-title {
-      margin: 40px 0 18px;
-      font-size: 1.6rem;
-      color: #0f172a;
-      border-left: 6px solid #2563eb;
-      padding-left: 12px;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 22px;
-    }
-    .card {
-      background: #ffffff;
-      border-radius: 18px;
-      padding: 22px;
-      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.12);
-    }
-    .member-img, .persona-img {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      object-fit: cover;
-      display: block;
-      margin: 0 auto 14px;
-      border: 4px solid #dbeafe;
-    }
-    .member-card h3, .persona-card h3 {
-      margin: 8px 0 6px;
-      text-align: center;
-      color: #0f172a;
-    }
-    .member-card p, .persona-card p {
-      margin: 6px 0;
-      color: #475569;
-      font-size: 0.95rem;
-    }
-    .student-id {
-      text-align: center;
-      font-weight: bold;
-      color: #2563eb;
-    }
-    .tag {
-      display: inline-block;
-      padding: 6px 12px;
-      border-radius: 999px;
-      background: #dbeafe;
-      color: #1d4ed8;
-      font-size: 0.85rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-    .persona-top {
-      text-align: center;
-      margin-bottom: 10px;
-    }
-    .persona-list {
-      padding-left: 18px;
-      margin: 8px 0 0;
-      color: #475569;
-      font-size: 0.94rem;
-    }
-    .note {
-      margin-top: 24px;
-      background: #eff6ff;
-      border-left: 5px solid #2563eb;
-      padding: 16px 18px;
-      border-radius: 12px;
-      color: #334155;
-    }
-    footer {
-      text-align: center;
-      color: #64748b;
-      margin-top: 40px;
-      font-size: 0.92rem;
-    }
     a {
-      color: #2563eb;
+      color: var(--mint-dark);
       text-decoration: none;
     }
+
     a:hover {
-      text-decoration: underline;
+      color: var(--clay);
+    }
+
+    .site-wrap {
+      width: min(1180px, calc(100% - 36px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      position: relative;
+      margin: 28px auto 24px;
+      padding: 58px clamp(24px, 5vw, 72px);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background:
+        radial-gradient(circle at 84% 22%, rgba(123, 216, 196, 0.28), transparent 18rem),
+        linear-gradient(120deg, rgba(255, 250, 241, 0.96), rgba(255, 245, 237, 0.9));
+      box-shadow: var(--shadow);
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      filter: blur(1px);
+      opacity: 0.8;
+    }
+
+    .hero::before {
+      width: 220px;
+      height: 220px;
+      right: -72px;
+      top: -68px;
+      background: rgba(123, 216, 196, 0.35);
+    }
+
+    .hero::after {
+      width: 160px;
+      height: 160px;
+      left: -48px;
+      bottom: -58px;
+      background: rgba(221, 138, 115, 0.24);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 860px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 18px;
+      padding: 8px 14px;
+      border: 1px solid rgba(59, 159, 143, 0.28);
+      border-radius: 999px;
+      background: rgba(123, 216, 196, 0.18);
+      color: var(--mint-dark);
+      font-family: "Trebuchet MS", Verdana, sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 820px;
+      margin-bottom: 18px;
+      font-size: clamp(2.55rem, 6vw, 5.7rem);
+      line-height: 0.94;
+      letter-spacing: -0.07em;
+    }
+
+    .hero-lead {
+      max-width: 720px;
+      margin: 0 0 28px;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.28rem);
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .hero-meta li {
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.54);
+      color: var(--muted);
+      font-family: "Trebuchet MS", Verdana, sans-serif;
+      font-size: 0.9rem;
+    }
+
+    .nav-shell {
+      position: sticky;
+      top: 12px;
+      z-index: 10;
+      margin: 0 auto 54px;
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 250, 241, 0.82);
+      box-shadow: 0 12px 32px rgba(74, 50, 31, 0.1);
+      backdrop-filter: blur(16px);
+    }
+
+    .section-nav {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .section-nav::-webkit-scrollbar {
+      display: none;
+    }
+
+    .section-nav a {
+      display: block;
+      white-space: nowrap;
+      padding: 10px 15px;
+      border-radius: 999px;
+      color: var(--ink);
+      font-family: "Trebuchet MS", Verdana, sans-serif;
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
+
+    .section-nav a:hover,
+    .section-nav a:focus {
+      background: var(--mint);
+      color: #153b34;
+      outline: none;
+    }
+
+    main {
+      padding-bottom: 76px;
+    }
+
+    .portfolio-section {
+      scroll-margin-top: 92px;
+      margin-bottom: 72px;
+    }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 20px;
+      align-items: start;
+      margin-bottom: 24px;
+    }
+
+    .section-number {
+      display: grid;
+      place-items: center;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: var(--ink);
+      color: var(--paper);
+      font-family: "Trebuchet MS", Verdana, sans-serif;
+      font-size: 0.95rem;
+      font-weight: 800;
+      box-shadow: 8px 8px 0 rgba(123, 216, 196, 0.42);
+    }
+
+    .section-heading h2 {
+      margin-bottom: 8px;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1;
+      letter-spacing: -0.05em;
+    }
+
+    .section-heading p {
+      max-width: 820px;
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .card {
+      position: relative;
+      padding: clamp(22px, 3vw, 34px);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: rgba(255, 250, 241, 0.9);
+      box-shadow: 0 16px 44px rgba(74, 50, 31, 0.09);
+    }
+
+    .card.soft {
+      background: rgba(255, 245, 237, 0.82);
+    }
+
+    .card.mint {
+      background: linear-gradient(135deg, rgba(123, 216, 196, 0.24), rgba(255, 250, 241, 0.9));
+    }
+
+    .card h3 {
+      margin-bottom: 14px;
+      color: var(--mint-dark);
+      font-size: clamp(1.45rem, 2.6vw, 2.1rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
+
+    .card h4 {
+      margin-bottom: 8px;
+      color: var(--clay);
+      font-family: "Trebuchet MS", Verdana, sans-serif;
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .card p:last-child,
+    .card ul:last-child {
+      margin-bottom: 0;
+    }
+
+    .grid {
+      display: grid;
+      gap: 22px;
+    }
+
+    .grid.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid.three {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid.four {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .content-stack {
+      display: grid;
+      gap: 22px;
+    }
+
+    .insight-list {
+      display: grid;
+      gap: 14px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .insight-list li {
+      padding-left: 22px;
+      border-left: 4px solid rgba(123, 216, 196, 0.78);
+      color: var(--muted);
+    }
+
+    .quote-strip {
+      padding: 24px;
+      border-radius: var(--radius-md);
+      background:
+        linear-gradient(90deg, rgba(123, 216, 196, 0.28), rgba(221, 138, 115, 0.18)),
+        rgba(255, 250, 241, 0.72);
+      color: var(--ink);
+      font-size: 1.18rem;
+      font-style: italic;
+    }
+
+    .persona-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      align-items: start;
+    }
+
+    .photo-frame {
+      position: relative;
+      padding: 14px;
+      border: 1px solid rgba(98, 72, 48, 0.18);
+      border-radius: 20px;
+      background: #fffdf8;
+      box-shadow: 0 18px 38px rgba(74, 50, 31, 0.13);
+      transform: rotate(-0.6deg);
+    }
+
+    .photo-frame:nth-child(2) {
+      transform: rotate(0.6deg);
+    }
+
+    .photo-frame::before {
+      content: "";
+      position: absolute;
+      top: -13px;
+      left: 50%;
+      width: 92px;
+      height: 26px;
+      border-radius: 5px;
+      background: rgba(241, 223, 200, 0.86);
+      transform: translateX(-50%) rotate(-2deg);
+      box-shadow: 0 5px 16px rgba(74, 50, 31, 0.12);
+    }
+
+    .photo-frame img {
+      display: block;
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    .photo-frame figcaption {
+      margin-top: 12px;
+      color: var(--muted);
+      font-family: "Trebuchet MS", Verdana, sans-serif;
+      font-size: 0.88rem;
+      text-align: center;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 0;
+      margin: 16px 0 0;
+      list-style: none;
+    }
+
+    .tag-list li,
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      background: rgba(123, 216, 196, 0.28);
+      color: #234a43;
+      font-family: "Trebuchet MS", Verdana, sans-serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .tag-list li {
+      padding: 8px 12px;
+    }
+
+    .pill {
+      padding: 7px 11px;
+      margin-bottom: 10px;
+    }
+
+    .placeholder {
+      display: grid;
+      place-items: center;
+      min-height: 180px;
+      padding: 24px;
+      border: 2px dashed rgba(59, 159, 143, 0.36);
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.35);
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .journey {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .journey-step {
+      padding: 18px;
+      border-radius: var(--radius-sm);
+      background: rgba(255, 255, 255, 0.48);
+      border: 1px solid var(--line);
+    }
+
+    .journey-step strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--clay);
+      font-family: "Trebuchet MS", Verdana, sans-serif;
+    }
+
+    .media-grid,
+    .sketch-grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .media-grid {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+
+    .sketch-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .media-slot,
+    .sketch-slot {
+      display: grid;
+      place-items: center;
+      aspect-ratio: 1 / 1;
+      border: 2px dashed rgba(98, 72, 48, 0.2);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.38);
+      color: var(--muted);
+      font-family: "Trebuchet MS", Verdana, sans-serif;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .comparison {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.5);
+      font-family: "Trebuchet MS", Verdana, sans-serif;
+      font-size: 0.94rem;
+    }
+
+    .comparison th,
+    .comparison td {
+      padding: 15px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      text-align: left;
+    }
+
+    .comparison th {
+      background: rgba(123, 216, 196, 0.24);
+      color: #234a43;
+      letter-spacing: 0.02em;
+    }
+
+    .comparison tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .link-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.42);
+      font-family: "Trebuchet MS", Verdana, sans-serif;
+    }
+
+    .link-card strong {
+      display: block;
+      color: var(--ink);
+    }
+
+    .link-card span {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 16px;
+      border-radius: 999px;
+      background: var(--ink);
+      color: var(--paper);
+      font-family: "Trebuchet MS", Verdana, sans-serif;
+      font-size: 0.9rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .button:hover {
+      background: var(--clay);
+      color: var(--paper);
+    }
+
+    .contribution-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: "Trebuchet MS", Verdana, sans-serif;
+      font-size: 0.94rem;
+    }
+
+    .contribution-table th,
+    .contribution-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+    }
+
+    .contribution-table th {
+      color: var(--mint-dark);
+      background: rgba(123, 216, 196, 0.15);
+    }
+
+    .iteration-pair {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    footer {
+      margin: 10px auto 34px;
+      padding: 26px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      text-align: center;
+      font-family: "Trebuchet MS", Verdana, sans-serif;
+      font-size: 0.92rem;
+    }
+
+    .back-top {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 12;
+      width: 46px;
+      height: 46px;
+      border: 1px solid rgba(45, 36, 31, 0.12);
+      border-radius: 50%;
+      background: var(--paper);
+      box-shadow: 0 12px 30px rgba(74, 50, 31, 0.16);
+      color: var(--ink);
+      font-family: "Trebuchet MS", Verdana, sans-serif;
+      font-weight: 900;
+    }
+
+    .back-top:hover {
+      background: var(--mint);
+      color: #153b34;
+      cursor: pointer;
+    }
+
+    @media (max-width: 900px) {
+      .grid.two,
+      .grid.three,
+      .grid.four,
+      .persona-gallery,
+      .journey,
+      .iteration-pair {
+        grid-template-columns: 1fr;
+      }
+
+      .media-grid,
+      .sketch-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .nav-shell {
+        border-radius: 24px;
+      }
+
+      .section-nav {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .site-wrap {
+        width: min(100% - 24px, 1180px);
+      }
+
+      .hero {
+        margin-top: 14px;
+        padding: 36px 20px;
+      }
+
+      .hero-meta li,
+      .section-nav a {
+        font-size: 0.78rem;
+      }
+
+      .section-heading {
+        grid-template-columns: 1fr;
+      }
+
+      .media-grid,
+      .sketch-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .comparison,
+      .contribution-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+
+      .link-card {
+        align-items: flex-start;
+        flex-direction: column;
+      }
     }
   </style>
 </head>
 <body>
-<div class="container">
-<!--  <header>-->
-<!--    <h1>Our Group Portfolio</h1>-->
-<!--    <p>-->
-<!--      Welcome to B4-2 group page.-->
-<!--    </p>-->
-<!--    <p>-->
-<!--      This page introduces our group members and presents two project personas.-->
-<!--    </p>-->
-<!--  </header>-->
-
-  <header>
-    <h1>Our Group Portfolio</h1>
-    <p id="typing-line1" class="typing"></p>
-    <p id="typing-line2" class="typing"></p>
-  </header>
-
-
-
-
-
-  <section>
-    <h2 class="section-title">Group Members</h2>
-    <div class="grid">
-      <div class="card member-card">
-        <img class="member-img" src="image/zmjjkk.jpg" alt="Member 1 photo">
-        <h3>Liangyu Wei</h3>
-        <p class="student-id">Student ID: 2360674</p>
-        <p><strong>Introduction:</strong> 康神开播了？真的假的？wk真开播了；这么能学ics你让他学完呗</p>
-        <p><strong>Hobbies:</strong> Tactical gaming (Valorant)....</p>
-        <p><strong>Favorite singers:</strong> Fish Leong, JJ Lin, Eason Chan... </p>
-        <p><strong>Self-description:</strong> A dedicated Duelist player in Valorant, specializing in Jett and Waylay.</p>
+  <div class="site-wrap" id="top">
+    <header class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">CPT208 Human-Centric Computing</p>
+        <h1>B4 Relation Between Generations</h1>
+        <p class="hero-lead">
+          A process portfolio documenting how our group investigates playful, low-pressure ways
+          to help younger and older family members start conversations, share everyday life, and
+          build deeper emotional understanding.
+        </p>
+        <ul class="hero-meta" aria-label="Project metadata">
+          <li>Track: Social Connectivity</li>
+          <li>Platform: Mobile-first Web App</li>
+          <li>Theme: Family Connection</li>
+          <li>Submission: Process Portfolio</li>
+        </ul>
       </div>
+    </header>
 
-      <div class="card member-card">
-        <img class="member-img" src="image/smoggy.jpg" alt="Member 2 photo">
-        <h3>Jingchen Yang</h3>
-        <p class="student-id">Student ID: 2363281</p>
-        <p><strong>Introduction:</strong> 上朝 </p>
-        <p><strong>Hobbies:</strong> Tactical gaming (Valorant)....</p>
-        <p><strong>Favorite singers:</strong> ... </p>
-        <p><strong>Self-description:</strong> A dedicated Controller player in Valorant, specializing in Omen and Viper.</p>
-      </div>
+    <nav class="nav-shell" aria-label="Portfolio sections">
+      <ul class="section-nav">
+        <li><a href="#motivation">Motivation &amp; Research</a></li>
+        <li><a href="#requirements">User Requirements</a></li>
+        <li><a href="#ideation">Ideation &amp; Alternatives</a></li>
+        <li><a href="#technical">Technical Implementation</a></li>
+        <li><a href="#evaluation">Evaluation &amp; Reflection</a></li>
+      </ul>
+    </nav>
 
-      <div class="card member-card">
-              <img class="member-img" src="image/CHICHOO.jpg" alt="Member 3 photo">
-              <h3>Hengxi Liu</h3>
-              <p class="student-id">Student ID: 2363265</p>
-              <p><strong>Introduction:</strong> 都是同龄人我原本没想降维打击 </p>
-              <p><strong>Hobbies:</strong> Tactical gaming (Valorant), cinematic exploration, and traveling.</p>
-              <p><strong>Favorite singers:</strong> Fish Leong, Jay Chou, Stefanie Sun, Avril Lavigne... </p>
-              <p><strong>Self-description:</strong> A dedicated Sentinel player in Valorant, specializing in Killjoy and Cypher.</p>
+    <main>
+      <section class="portfolio-section" id="motivation">
+        <div class="section-heading">
+          <span class="section-number">01</span>
+          <div>
+            <h2>Motivation &amp; Research</h2>
+            <p>
+              This section explains why we chose the intergenerational relationship track and
+              what gaps we found in academic research and existing family communication products.
+            </p>
+          </div>
+        </div>
+
+        <div class="content-stack">
+          <article class="card mint">
+            <span class="pill">The Why</span>
+            <h3>Designing connection, not just communication efficiency</h3>
+            <p>
+              Our group chose Relation between Generations because we wanted to address a
+              human-centered problem that is both common and emotionally meaningful: the weakening
+              of communication across generations. We are especially interested in this topic
+              because many parent-child and grandparent-grandchild relationships are not defined
+              by open conflict, but by a quieter problem. Conversations often remain superficial,
+              stop easily, or fail to build real mutual understanding. In many families, people
+              care deeply about one another, yet they lack shared topics, low-pressure ways to
+              communicate, and opportunities to understand each other's everyday lives.
+            </p>
+            <p>
+              We chose this track because it allows us to design for connection rather than only
+              efficiency. Compared with general communication tools, this topic gives us a chance
+              to explore how playful and lightweight interactions can support empathy, curiosity,
+              and long-term closeness across age groups. We are also interested in the challenge
+              of creating a mobile-first experience that remains accessible to both younger and
+              older users in hybrid family contexts.
+            </p>
+          </article>
+
+          <div class="grid two">
+            <article class="card">
+              <span class="pill">Academic Research</span>
+              <h3>What existing studies do well</h3>
+              <ul class="insight-list">
+                <li>
+                  Existing research shows that intergenerational support does not depend on one
+                  single communication channel. It can be improved through mobile storytelling,
+                  asynchronous media exchange, and remote collaborative play.
+                </li>
+                <li>
+                  Reis et al. provide an overview of major technology forms in this area, while
+                  Druin et al. highlight the potential of intergenerational mobile story creation.
+                  Bentley et al. show how asynchronous video can strengthen family connection, and
+                  Yuan et al. demonstrate how collaborative games can support higher-quality
+                  intergenerational conversations.
+                </li>
+                <li>
+                  These studies are strongly user-centered. For example, Druin et al. use
+                  participatory design, Bentley et al. conduct a field evaluation with 20
+                  participants, and Yuan et al. use parent-child design probes with 15 groups from
+                  16 families.
+                </li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <span class="pill">Commercial Products</span>
+              <h3>What current products do well</h3>
+              <ul class="insight-list">
+                <li>
+                  Marco Polo lowers the barrier to contact through asynchronous video, making it
+                  easier for families to communicate even when they are not available at the same
+                  time.
+                </li>
+                <li>
+                  FamilyAlbum supports safe and organized sharing of family photos and videos,
+                  while StoryCorps uses guided questions, recording, and archiving to structure
+                  meaningful conversations.
+                </li>
+                <li>
+                  Caribu combines video calling with shared reading, drawing, and games, proving
+                  that joint activities can create a stronger sense of remote companionship.
+                </li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="grid two">
+            <article class="card soft">
+              <span class="pill">Research Gap</span>
+              <h3>What is still missing</h3>
+              <ul class="insight-list">
+                <li>
+                  Existing papers validate storytelling, asynchronous communication, and shared
+                  activities, but these mechanisms are usually studied as separate interaction
+                  paradigms.
+                </li>
+                <li>
+                  There is still a lack of a unified model that connects topic initiation, life
+                  exchange, and shared memory building into one continuous experience.
+                </li>
+                <li>
+                  Many studies offer research prototypes or design probes, but fewer provide a
+                  product pathway for lightweight, repeated, everyday relationship maintenance.
+                </li>
+              </ul>
+            </article>
+
+            <article class="card soft">
+              <span class="pill">Product Gap</span>
+              <h3>From staying in touch to understanding each other</h3>
+              <ul class="insight-list">
+                <li>
+                  Marco Polo is mainly a communication channel, FamilyAlbum is mainly a media
+                  archive, StoryCorps is closer to a deep interview tool, and Caribu focuses on
+                  remote co-play.
+                </li>
+                <li>
+                  Most products help users keep contact or complete sharing, but they do not
+                  actively guide two generations to understand each other's life worlds.
+                </li>
+                <li>
+                  A stronger solution should help both sides compare experiences, respond to each
+                  other's perspectives, and turn small interactions into deeper mutual
+                  understanding.
+                </li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="quote-strip">
+            Our opportunity is to design a gentle, playful bridge that makes starting a
+            conversation easier and makes family memories easier to grow over time.
+          </div>
+
+          <article class="card">
+            <span class="pill">Stakeholder Personas</span>
+            <h3>Primary and secondary users</h3>
+            <p>
+              The personas below represent two sides of the same intergenerational relationship:
+              a young adult who wants communication to feel more natural, and an older family
+              member who wants to participate but may feel uncertain with digital tools.
+            </p>
+            <div class="persona-gallery">
+              <figure class="photo-frame">
+                <img src="image/persona-ethan.png" alt="Persona board for Ethan, a 21-year-old student in Shanghai" />
+                <figcaption>Ethan - young family member and mobile-first user</figcaption>
+              </figure>
+              <figure class="photo-frame">
+                <img src="image/persona-martha.png" alt="Persona board for Martha, a 58-year-old teacher in Nara" />
+                <figcaption>Martha - older family member and family-oriented user</figcaption>
+              </figure>
             </div>
-      
-      <div class="card member-card">
-        <img class="member-img" src="image/nobody.jpg" alt="Member 4 photo">
-        <h3>Yuanhao Cheng</h3>
-        <p class="student-id">Student ID: 2362404</p>
-        <p><strong>Introduction:</strong> 喜欢我的战斗脸吗 </p>
-        <p><strong>Hobbies:</strong> Tactical gaming (Valorant)....</p>
-        <p><strong>Favorite singers:</strong> Blackpink... </p>
-        <p><strong>Self-description:</strong> A dedicated Duelist player in Valorant, specializing in Jett and Neon.</p>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2 class="section-title">Project Personas</h2>
-    <div class="grid">
-      <div class="card persona-card">
-        <div class="persona-top">
-          <span class="tag">Primary User (80%)</span>
+          </article>
         </div>
-        <!-- 删掉了 Persona 1 的头像 -->
-        <h3>Persona 1: Chen Yu</h3>
-        <p><strong>Age:</strong> 32</p>
-        <p><strong>Occupation:</strong> Working Mother</p>
-        <p><strong>Background:</strong> A working mother in first-tier city living with her 5-year-old daughter and 60-year-old mother, wants to build emotional connection between generations with simple digital tools.</p>
-        <p><strong>Goals:</strong></p>
-        <ul class="persona-list">
-          <li>Help daughter understand grandparents' life stories</li>
-          <li>Record family memories in an easy way</li>
-          <li>Find age-friendly interaction methods for family</li>
-        </ul>
-        <p><strong>Pain Points:</strong></p>
-        <ul class="persona-list">
-          <li>Limited fragmented time to accompany family</li>
-          <li>Elders cannot use complex digital products</li>
-          <li>Daughter lacks sense of family belonging</li>
-        </ul>
-      </div>
+      </section>
 
-      <div class="card persona-card">
-        <div class="persona-top">
-          <span class="tag">Edge User (10%)</span>
+      <section class="portfolio-section" id="requirements">
+        <div class="section-heading">
+          <span class="section-number">02</span>
+          <div>
+            <h2>User Requirements</h2>
+            <p>
+              This section will connect user pain points to design requirements and show evidence
+              from interviews or observations.
+            </p>
+          </div>
         </div>
-        <!-- 删掉了 Persona 2 的头像 -->
-        <h3>Persona 2: Li Jianguo</h3>
-        <p><strong>Age:</strong> 65</p>
-        <p><strong>Occupation:</strong> Retired Teacher</p>
-        <p><strong>Background:</strong> A retired history teacher living with spouse, grandson lives in other city, wants to pass down family history and life experience to younger generations.</p>
-        <p><strong>Goals:</strong></p>
-        <ul class="persona-list">
-          <li>Systematically organize family history digitally</li>
-          <li>Let grandchildren understand the changes of times</li>
-          <li>Interact with distant grandson easily</li>
-        </ul>
-        <p><strong>Pain Points:</strong></p>
-        <ul class="persona-list">
-          <li>Frustrated by complex operation of digital products</li>
-          <li>Handwritten notes/old photos are easy to damage</li>
-          <li>Physical distance with grandson causes emotional gap</li>
-        </ul>
-      </div>
-    </div>
 
-    <!-- 这里删掉了整个 .note 区域 -->
-  </section>
+        <div class="content-stack">
+          <article class="card">
+            <span class="pill">User Journey Map</span>
+            <h3>Current communication journey</h3>
+            <p>
+              Replace this draft journey with the final visual map after user research is
+              complete. The structure below keeps the focus on pain points before the system is
+              introduced.
+            </p>
+            <div class="journey" aria-label="Draft user journey map">
+              <div class="journey-step">
+                <strong>Trigger</strong>
+                A family member wants to talk but does not know how to begin naturally.
+              </div>
+              <div class="journey-step">
+                <strong>Attempt</strong>
+                They use a normal chat app, but the conversation becomes short or routine.
+              </div>
+              <div class="journey-step">
+                <strong>Breakdown</strong>
+                Different lifestyles, digital habits, and expression styles create distance.
+              </div>
+              <div class="journey-step">
+                <strong>Opportunity</strong>
+                A playful prompt or shared activity can create a softer starting point.
+              </div>
+            </div>
+          </article>
 
-  <footer>
-    <p>Made for Week 2 Homework | GitHub Pages Portfolio</p>
-  </footer>
-</div>
+          <div class="grid three">
+            <article class="card mint">
+              <h3>Must-have 1</h3>
+              <p>
+                Help users start conversations with low-pressure, emotionally safe prompts.
+              </p>
+            </article>
+            <article class="card mint">
+              <h3>Must-have 2</h3>
+              <p>
+                Support lightweight life sharing so both generations can exchange daily moments.
+              </p>
+            </article>
+            <article class="card mint">
+              <h3>Must-have 3</h3>
+              <p>
+                Turn small interactions into shared memories that can be revisited over time.
+              </p>
+            </article>
+          </div>
 
+          <article class="card soft">
+            <span class="pill">Evidence of Life</span>
+            <h3>Interview and observation evidence</h3>
+            <p>
+              Add five photos or short clips showing user interviews, family communication
+              observations, or contextual research activities.
+            </p>
+            <div class="media-grid">
+              <div class="media-slot">Evidence 1</div>
+              <div class="media-slot">Evidence 2</div>
+              <div class="media-slot">Evidence 3</div>
+              <div class="media-slot">Evidence 4</div>
+              <div class="media-slot">Evidence 5</div>
+            </div>
+          </article>
+        </div>
+      </section>
 
-<script>
-  const text1 = "Welcome to B4-2-2 EDG.";
-  const text2 = "This page introduces our group members and presents two project personas.";
+      <section class="portfolio-section" id="ideation">
+        <div class="section-heading">
+          <span class="section-number">03</span>
+          <div>
+            <h2>Ideation &amp; Alternatives</h2>
+            <p>
+              This section records how the group explored different playful interaction ideas,
+              compared alternatives, and selected the most promising direction.
+            </p>
+          </div>
+        </div>
 
-  const line1 = document.getElementById("typing-line1");
-  const line2 = document.getElementById("typing-line2");
+        <div class="content-stack">
+          <article class="card">
+            <span class="pill">Crazy Eights</span>
+            <h3>Rapid UI sketches</h3>
+            <p>
+              Upload photos of eight hand-drawn interface ideas here. Each sketch should show a
+              different way to create intergenerational play or conversation.
+            </p>
+            <div class="sketch-grid">
+              <div class="sketch-slot">Sketch 1</div>
+              <div class="sketch-slot">Sketch 2</div>
+              <div class="sketch-slot">Sketch 3</div>
+              <div class="sketch-slot">Sketch 4</div>
+              <div class="sketch-slot">Sketch 5</div>
+              <div class="sketch-slot">Sketch 6</div>
+              <div class="sketch-slot">Sketch 7</div>
+              <div class="sketch-slot">Sketch 8</div>
+            </div>
+          </article>
 
-  function typeText(element, text, speed, callback) {
-    let i = 0;
-    element.textContent = "";
+          <article class="card soft">
+            <span class="pill">Design Alternatives</span>
+            <h3>Comparing possible system directions</h3>
+            <table class="comparison">
+              <thead>
+                <tr>
+                  <th>Alternative</th>
+                  <th>Strength</th>
+                  <th>Limitation</th>
+                  <th>Decision</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Prompt-based conversation cards</td>
+                  <td>Easy to start and suitable for short daily use.</td>
+                  <td>May become repetitive without memory building.</td>
+                  <td>Keep as an entry point.</td>
+                </tr>
+                <tr>
+                  <td>Shared memory album</td>
+                  <td>Good for long-term emotional value and reflection.</td>
+                  <td>Needs enough interaction before it becomes meaningful.</td>
+                  <td>Use as a growing archive.</td>
+                </tr>
+                <tr>
+                  <td>Mini collaborative activities</td>
+                  <td>More playful and engaging for both generations.</td>
+                  <td>Must stay simple for older users and busy young users.</td>
+                  <td>Combine selectively with prompts.</td>
+                </tr>
+              </tbody>
+            </table>
+          </article>
 
-    function typing() {
-      if (i < text.length) {
-        element.textContent += text.charAt(i);
-        i++;
-        setTimeout(typing, speed);
-      } else {
-        element.classList.add("done");
-        if (callback) callback();
-      }
-    }
+          <div class="link-card">
+            <div>
+              <strong>Low-Fi Prototype</strong>
+              <span>Replace this placeholder with the clickable Figma prototype URL.</span>
+            </div>
+            <a class="button" href="#" aria-label="Figma prototype placeholder">Figma Link TBD</a>
+          </div>
+        </div>
+      </section>
 
-    typing();
-  }
+      <section class="portfolio-section" id="technical">
+        <div class="section-heading">
+          <span class="section-number">04</span>
+          <div>
+            <h2>Technical Implementation</h2>
+            <p>
+              This section explains how the web app is structured, how data or interaction state
+              is handled, and what each group member contributed.
+            </p>
+          </div>
+        </div>
 
-  window.onload = function () {
-    typeText(line1, text1, 80, function () {
-      typeText(line2, text2, 50);
+        <div class="content-stack">
+          <article class="card">
+            <span class="pill">System Architecture</span>
+            <h3>How the web app handles interaction data</h3>
+            <div class="placeholder">
+              Add an architecture diagram here, for example:
+              User input -> playful prompt engine -> shared activity state -> memory archive.
+            </div>
+          </article>
+
+          <div class="grid two">
+            <div class="link-card">
+              <div>
+                <strong>High-Fi Prototype</strong>
+                <span>Replace with the hosted GitHub Pages or Vercel URL.</span>
+              </div>
+              <a class="button" href="#">Live URL TBD</a>
+            </div>
+            <div class="link-card">
+              <div>
+                <strong>Source Code Repository</strong>
+                <span>Replace with the public GitHub repository link.</span>
+              </div>
+              <a class="button" href="#">GitHub TBD</a>
+            </div>
+          </div>
+
+          <article class="card soft">
+            <span class="pill">Individual Contributions</span>
+            <h3>Group member responsibilities</h3>
+            <table class="contribution-table">
+              <thead>
+                <tr>
+                  <th>Member</th>
+                  <th>Main Contribution</th>
+                  <th>Evidence to Add</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Member 1</td>
+                  <td>Research, requirements, or content writing.</td>
+                  <td>Research notes / interview evidence.</td>
+                </tr>
+                <tr>
+                  <td>Member 2</td>
+                  <td>UI design, Figma prototype, or visual assets.</td>
+                  <td>Figma link / sketch photos.</td>
+                </tr>
+                <tr>
+                  <td>Member 3</td>
+                  <td>Frontend implementation or interaction logic.</td>
+                  <td>GitHub commits / feature screenshots.</td>
+                </tr>
+                <tr>
+                  <td>Member 4</td>
+                  <td>User testing, evaluation, or video demo support.</td>
+                  <td>Testing notes / before-after evidence.</td>
+                </tr>
+              </tbody>
+            </table>
+          </article>
+        </div>
+      </section>
+
+      <section class="portfolio-section" id="evaluation">
+        <div class="section-heading">
+          <span class="section-number">05</span>
+          <div>
+            <h2>Evaluation &amp; Reflection</h2>
+            <p>
+              This section will show usability testing with real users, design refinements based
+              on feedback, and final reflection on ethics, accessibility, and AI use.
+            </p>
+          </div>
+        </div>
+
+        <div class="content-stack">
+          <div class="grid three">
+            <article class="card">
+              <h3>User Test 1</h3>
+              <p>
+                Add participant profile, task, key observation, and design implication.
+              </p>
+            </article>
+            <article class="card">
+              <h3>User Test 2</h3>
+              <p>
+                Add participant profile, task, key observation, and design implication.
+              </p>
+            </article>
+            <article class="card">
+              <h3>User Test 3</h3>
+              <p>
+                Add participant profile, task, key observation, and design implication.
+              </p>
+            </article>
+          </div>
+
+          <article class="card soft">
+            <span class="pill">Iterative Refinement</span>
+            <h3>Before and after screenshots</h3>
+            <div class="iteration-pair">
+              <div class="placeholder">Before screenshot</div>
+              <div class="placeholder">After screenshot</div>
+            </div>
+          </article>
+
+          <div class="grid two">
+            <article class="card mint">
+              <span class="pill">Final Reflection</span>
+              <h3>Social and ethical implications</h3>
+              <p>
+                Discuss how the design respects different digital abilities, avoids forcing
+                emotional disclosure, supports accessibility, and treats family memories as
+                sensitive personal content.
+              </p>
+            </article>
+            <article class="card mint">
+              <span class="pill">Technical Reflection</span>
+              <h3>AI use and verification</h3>
+              <p>
+                If AI-assisted coding is used, document the main prompts, how the generated code
+                was checked against user requirements, and any ethical considerations such as
+                accessibility, bias, and transparency.
+              </p>
+            </article>
+          </div>
+
+          <article class="card">
+            <span class="pill">References</span>
+            <h3>Research, products, and AI tools</h3>
+            <p>
+              Add complete references for academic papers, commercial products, images, and any
+              AI tools used for coding, writing support, visual assets, or video production.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>CPT208 Human-Centric Computing | Process Portfolio for B4 Relation Between Generations</p>
+    </footer>
+  </div>
+
+  <button class="back-top" type="button" aria-label="Back to top">Top</button>
+
+  <script>
+    const backTopButton = document.querySelector(".back-top");
+
+    backTopButton.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
     });
-  };
-</script>
-
-
+  </script>
 </body>
 </html>
