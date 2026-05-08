@@ -4,7 +4,7 @@ const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selec
 const REQUIREMENT_ITEMS = [
   {
     pill: "Requirement 1",
-    title: "Topic Bridge",
+    title: "Topic Bridge🌉",
     subtitle: "Lightweight conversation starters",
     intro:
       "The system should lower the pressure of beginning a conversation and create a natural opening point for both generations.",
@@ -25,7 +25,7 @@ const REQUIREMENT_ITEMS = [
   },
   {
     pill: "Requirement 2",
-    title: "Emotion Sharing / Mood Board",
+    title: "Emotion Sharing / Mood Board😊",
     subtitle: "Low-barrier emotional expression",
     intro:
       "Emotional communication should be quick, visible, and easy to respond to, even when users have limited time or are not comfortable with long messages.",
@@ -46,7 +46,7 @@ const REQUIREMENT_ITEMS = [
   },
   {
     pill: "Requirement 3",
-    title: "Shared Memory Map / Story Album",
+    title: "Shared Memory Map / Story Album🧩",
     subtitle: "Playful co-creation of memories",
     intro:
       "The system should transform family memory-making into a collaborative and enjoyable experience rather than a static archive.",
@@ -95,11 +95,6 @@ const EVIDENCE_ITEMS = [
   }
 ];
 
-const USER_TEST_ITEMS = [1, 2, 3].map((index) => ({
-  title: `User Test ${index}`,
-  body: "Add participant profile, task, key observation, and design implication."
-}));
-
 const WALKTHROUGH_DATA = {
   topic: [
     {
@@ -124,11 +119,18 @@ const WALKTHROUGH_DATA = {
         "After selecting a scene, users see related topic cards. Each card shows a short theme, a description, and the number of guided questions."
     },
     {
-      image: "image/A3.jpg",
-      alt: "Topic Bridge detail screen with opening questions",
-      title: "Guided questions",
+      image: "image/topic-bridge-step-04.png",
+      alt: "Topic Bridge detail screen showing why the topic matters, opening questions, and deeper follow-up prompts",
+      title: "Question expansion",
       description:
-        "The topic detail page explains why the topic matters and provides opening questions that help both generations continue the conversation."
+        "After choosing a topic, users can read why it matters, browse light opening questions, and expand into deeper prompts before starting the conversation."
+    },
+    {
+      image: "image/topic-bridge-step-05.png",
+      alt: "Topic Bridge conversation screen with AI-assisted message suggestions and family role switching",
+      title: "AI-supported conversation",
+      description:
+        "Once the chat begins, the system uses AI suggestions to keep the exchange going naturally, helping family members continue the conversation with less pressure."
     }
   ],
   mood: [
@@ -172,6 +174,152 @@ const WALKTHROUGH_DATA = {
   ]
 };
 
+const CRAZY_EIGHTS_ITEMS = [
+  {
+    image: "image/crazy-01-homepage.png",
+    alt: "Hand-drawn homepage sketch for EchoNest showing guest mode and user login entry points",
+    title: "Homepage entry",
+    label: "Draft 01",
+    note: "An opening screen that balances quick guest access with a clearer path into family features."
+  },
+  {
+    image: "image/crazy-02-dashboard-guest.png",
+    alt: "Hand-drawn guest dashboard sketch showing Topic Bridge, Mood Board, and Journal Map tiles",
+    title: "Guest dashboard",
+    label: "Draft 02",
+    note: "A lightweight dashboard that lets first-time visitors browse the three core functions before signing in."
+  },
+  {
+    image: "image/crazy-03-dashboard-user.png",
+    alt: "Hand-drawn signed-in dashboard sketch for EchoNest with account details and feature shortcuts",
+    title: "Signed-in dashboard",
+    label: "Draft 03",
+    note: "A more personalised dashboard that keeps the same feature map while exposing account-specific actions."
+  },
+  {
+    image: "image/crazy-04-topic-bridge.png",
+    alt: "Hand-drawn Topic Bridge sketch with prompt suggestions, custom scenarios, and refresh controls",
+    title: "Topic Bridge board",
+    label: "Draft 04",
+    note: "A prompt-selection screen focused on quick conversation starters, reusable themes, and low-pressure refresh actions."
+  },
+  {
+    image: "image/crazy-05-mood-board.png",
+    alt: "Hand-drawn Mood Board sketch with emoji mood check-in and family mood updates",
+    title: "Mood Board check-in",
+    label: "Draft 05",
+    note: "An emotional check-in flow that pairs simple emoji responses with visible family mood updates."
+  },
+  {
+    image: "image/crazy-06-journal-map.png",
+    alt: "Hand-drawn Journal Map sketch summarising achievements, activity counts, and a timeline",
+    title: "Journal Map summary",
+    label: "Draft 06",
+    note: "A reflective summary view that turns shared interactions into milestones, counts, and a lightweight activity timeline."
+  },
+  {
+    image: "image/crazy-07-topic-chatting.png",
+    alt: "Hand-drawn topic chatting sketch showing guided prompts mixed with message replies and annotations",
+    title: "Topic chatting flow",
+    label: "Draft 07",
+    note: "A conversation detail screen that mixes guided prompts with personal replies to keep the dialogue moving naturally."
+  },
+  {
+    image: "image/crazy-08-login.png",
+    alt: "Hand-drawn login page sketch with email and password fields for returning users",
+    title: "Login page",
+    label: "Draft 08",
+    note: "A focused sign-in concept for returning users who want quick access to saved topics and advanced functions."
+  },
+  {
+    image: "image/crazy-09-register.png",
+    alt: "Hand-drawn registration page sketch with account creation fields and family role selection",
+    title: "Register page",
+    label: "Draft 09",
+    note: "An extended registration concept that introduces role selection so the product can adapt to different family members."
+  }
+];
+
+const TIMELINE_ITEMS = [
+  {
+    week: "Week 2",
+    title: "Topic Confirmation & Direction Definition",
+    points: [
+      "The group selected B4 \"Relation between Generations,\" focusing on families who care for one another but struggle to communicate naturally across generations.",
+      "The project was framed around gentle, lightweight, and playful interaction rather than simply improving communication efficiency.",
+      "The early concept established three core threads: starting topics, sharing emotions, and co-creating memories."
+    ]
+  },
+  {
+    week: "Week 3",
+    title: "User Research Launch",
+    points: [
+      "Initial interviews explored real pain points such as lacking shared topics, awkward openings, shallow conversations, and clear differences in expression across age groups.",
+      "A questionnaire and preliminary statistics helped validate needs around communication frequency, expression habits, emotional sharing, and memory recording."
+    ]
+  },
+  {
+    week: "Week 4",
+    title: "Research Synthesis & Gap Identification",
+    points: [
+      "Two personas, Ethan and Martha, were created to reflect different motivations, pain points, and levels of digital confidence across generations.",
+      "A User Journey Map captured the path from wanting to reach out to struggling to start and eventually losing conversational momentum.",
+      "Four academic papers and four commercial products were reviewed to clarify the missing link: one system that connects topic initiation, everyday exchange, and shared memory building."
+    ]
+  },
+  {
+    week: "Week 5",
+    title: "Requirements & Concept Exploration",
+    points: [
+      "Research insights were distilled into three playful requirements: Topic Bridge, Emotion Sharing / Mood Board, and Shared Memory Map / Story Album.",
+      "Multiple rounds of Crazy Eights sketches were produced to explore different information structures and interaction metaphors.",
+      "The low-fidelity direction settled on a mobile H5 experience with emotional visuals and a family-album mode of content presentation."
+    ]
+  },
+  {
+    week: "Week 6",
+    title: "Low-Fi to High-Fi Transition",
+    points: [
+      "The interface direction was narrowed toward a warm, family-album aesthetic with low-pressure interaction patterns.",
+      "Portfolio materials for Motivation & Research, User Requirements, and Ideation & Alternatives were organized in parallel to support the process website."
+    ]
+  },
+  {
+    week: "Week 7",
+    title: "System Development & Page Implementation",
+    points: [
+      "The team started building a complete high-fidelity H5 prototype with clickable flows and demonstrable feature paths.",
+      "The technical direction centered on a mobile-first Vue 3 + Vite frontend, documented with Vue Router, Axios, and REST API logic for login, topics, mood check-ins, and family journals."
+    ]
+  },
+  {
+    week: "Week 8",
+    title: "Alpha Prototype & Midpoint Presentation",
+    points: [
+      "The alpha prototype was able to demonstrate the core journeys for topic guidance, mood sharing, and family journal summaries.",
+      "The Week 8 poster and alpha system presentation were prepared alongside the prototype.",
+      "Portfolio artifacts such as personas, questionnaire analysis, the user journey map, and evidence of life were continuously integrated."
+    ]
+  },
+  {
+    week: "Week 9",
+    title: "Testing & Iteration",
+    points: [
+      "User evaluation focused on whether the functions were understandable, whether the flow felt natural, and whether topic guidance and mood expression truly reduced intergenerational communication pressure.",
+      "Based on feedback, both the interface and the portfolio narrative were refined to make the design story and research argument clearer."
+    ]
+  },
+  {
+    week: "Week 10",
+    title: "Final Delivery & Submission",
+    points: [
+      "The hosted process portfolio was completed as a web page covering Motivation & Research, User Requirements, Ideation & Alternatives, Technical Implementation, and Evaluation & Reflection.",
+      "The high-fidelity H5 demo system was organized and deployed online to present the three core functions through a live product flow.",
+      "A video demo and all final course deliverables were submitted, presenting the full human-centered process from topic selection to research, design, implementation, and delivery."
+    ]
+  }
+];
+
 const REVEAL_SELECTOR = [
   ".section-heading",
   ".card",
@@ -189,8 +337,10 @@ const REVEAL_SELECTOR = [
   ".comparison",
   ".contribution-table",
   ".architecture-node",
+  ".timeline-step",
   ".walkthrough-card",
-  ".implementation-card"
+  ".implementation-card",
+  ".contribution-member"
 ].join(", ");
 
 const REVEAL_STAGGERS = [
@@ -200,8 +350,10 @@ const REVEAL_STAGGERS = [
   [".persona-gallery .photo-frame", 130],
   [".sketch-grid .sketch-slot", 70],
   [".evidence-board .board-photo", 120],
+  [".timeline-flow .timeline-step", 95],
   [".architecture-board .architecture-node", 85],
-  [".walkthrough-grid .walkthrough-card", 100]
+  [".walkthrough-grid .walkthrough-card", 100],
+  [".contribution-grid .contribution-member", 90]
 ];
 
 const renderList = (items, renderItem) => items.map(renderItem).join("");
@@ -213,11 +365,15 @@ const renderRequirementPoints = (points) => {
   );
 };
 
+const renderTimelinePoints = (points) => {
+  return renderList(points, (point) => `<li>${point}</li>`);
+};
+
 const renderDynamicCollections = () => {
   const requirementsGrid = $("#requirements-grid");
   const evidenceBoard = $("#evidence-board");
   const sketchGrid = $("#sketch-grid");
-  const userTestsGrid = $("#user-tests-grid");
+  const timelineGrid = $("#timeline-grid");
 
   if (requirementsGrid) {
     requirementsGrid.innerHTML = renderList(
@@ -253,14 +409,18 @@ const renderDynamicCollections = () => {
     );
   }
 
-  if (userTestsGrid) {
-    userTestsGrid.innerHTML = renderList(
-      USER_TEST_ITEMS,
-      ({ title, body }) => `
-        <article class="card">
-          <h3>${title}</h3>
-          <p>${body}</p>
-        </article>
+  if (timelineGrid) {
+    timelineGrid.innerHTML = renderList(
+      TIMELINE_ITEMS,
+      ({ week, title, points }, index) => `
+        <section class="timeline-step ${index % 2 === 0 ? "left" : "right"}">
+          <div class="timeline-banner">${week}</div>
+          <span class="timeline-marker" aria-hidden="true"></span>
+          <article class="timeline-panel">
+            <h4>${title}</h4>
+            <ul class="timeline-points">${renderTimelinePoints(points)}</ul>
+          </article>
+        </section>
       `
     );
   }
@@ -339,7 +499,6 @@ const updateBackTopButton = () => {
 };
 
 const setHeroItemDelay = (element, delay) => {
-  element.setAttribute("data-hero-item", "");
   element.style.setProperty("--hero-delay", `${delay}ms`);
 };
 
@@ -396,6 +555,58 @@ const setupWalkthroughs = () => {
   });
 };
 
+const updateCrazyEightsGallery = (gallery, index) => {
+  if (!gallery || !CRAZY_EIGHTS_ITEMS.length) {
+    return;
+  }
+
+  const safeIndex = (index + CRAZY_EIGHTS_ITEMS.length) % CRAZY_EIGHTS_ITEMS.length;
+  const item = CRAZY_EIGHTS_ITEMS[safeIndex];
+
+  gallery.dataset.index = String(safeIndex);
+  $(".crazy-focus-image", gallery).src = item.image;
+  $(".crazy-focus-image", gallery).alt = item.alt;
+  $(".crazy-focus-label", gallery).textContent = item.label;
+  $(".crazy-focus-title", gallery).textContent = item.title;
+  $(".crazy-focus-note", gallery).textContent = item.note;
+  $("[data-crazy-count]", gallery).textContent = `${safeIndex + 1} of ${CRAZY_EIGHTS_ITEMS.length}`;
+
+  $$(".walkthrough-dot", gallery).forEach((dot, dotIndex) => {
+    dot.classList.toggle("active", dotIndex === safeIndex);
+  });
+};
+
+const setupCrazyEightsGallery = () => {
+  $$("[data-crazy-gallery]").forEach((gallery) => {
+    const dotsContainer = $(".walkthrough-dots", gallery);
+
+    if (!dotsContainer) {
+      return;
+    }
+
+    dotsContainer.innerHTML = "";
+
+    CRAZY_EIGHTS_ITEMS.forEach((item, index) => {
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "walkthrough-dot";
+      dot.setAttribute("aria-label", `Go to ${item.label}: ${item.title}`);
+      dot.addEventListener("click", () => updateCrazyEightsGallery(gallery, index));
+      dotsContainer.appendChild(dot);
+    });
+
+    $('[data-crazy-action="prev"]', gallery)?.addEventListener("click", () => {
+      updateCrazyEightsGallery(gallery, Number(gallery.dataset.index || 0) - 1);
+    });
+
+    $('[data-crazy-action="next"]', gallery)?.addEventListener("click", () => {
+      updateCrazyEightsGallery(gallery, Number(gallery.dataset.index || 0) + 1);
+    });
+
+    updateCrazyEightsGallery(gallery, 0);
+  });
+};
+
 const setupRevealAnimation = () => {
   revealTargets.forEach((element) => {
     element.classList.add("reveal-on-scroll");
@@ -446,11 +657,6 @@ const setupHeroAnimation = () => {
       setHeroItemDelay(element, startDelay + index * step);
     });
   });
-
-  if (prefersReducedMotion) {
-    hero.classList.add("is-animated");
-    return;
-  }
 
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
@@ -524,6 +730,7 @@ setupRevealAnimation();
 setupHeroAnimation();
 setupSectionObserver();
 setupWalkthroughs();
+setupCrazyEightsGallery();
 
 if (backTopButton) {
   backTopButton.addEventListener("click", () => {
