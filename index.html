@@ -2276,12 +2276,16 @@
       box-shadow:
         inset 0 1px 0 rgba(255, 255, 255, 0.5),
         0 14px 24px rgba(74, 50, 31, 0.07);
+      display: flex;
+      flex-direction: column;
     }
 
     .iteration-shot img {
       display: block;
-      width: min(100%, 220px);
-      height: auto;
+      width: min(100%, 240px);
+      height: 420px;
+      object-fit: contain;
+      object-position: top center;
       margin: 0 auto;
       border-radius: 16px;
       box-shadow: 0 14px 24px rgba(74, 50, 31, 0.12);
@@ -4340,21 +4344,14 @@ Intergenerational Social Play over Distance</h4>
                       src="image/refinement-before-01.jpg"
                       alt="Before refinement screenshot one showing the initial interface state"
                     />
-                    <figcaption>Version 1 focused on feature visibility, but some screens still felt visually crowded.</figcaption>
+                    <figcaption>The initial design prioritized showing all core features at once, resulting in a visually crowded interface.</figcaption>
                   </figure>
                   <figure class="iteration-shot">
                     <img
                       src="image/refinement-before-02.jpg"
                       alt="Before refinement screenshot two showing the initial interface state"
                     />
-                    <figcaption>Earlier layouts exposed more elements at once, which increased scanning effort.</figcaption>
-                  </figure>
-                  <figure class="iteration-shot">
-                    <img
-                      src="image/refinement-before-03.jpg"
-                      alt="Before refinement screenshot three showing the initial interface state"
-                    />
-                    <figcaption>The first version also relied on denser grouping, making navigation less gentle for older users.</figcaption>
+                    <figcaption>The earlier static question layout exposed too many elements at once, increasing the user’s scanning effort.</figcaption>
                   </figure>
                 </div>
               </section>
@@ -4370,21 +4367,14 @@ Intergenerational Social Play over Distance</h4>
                       src="image/refinement-after-01.jpg"
                       alt="After refinement screenshot one showing the updated interface state"
                     />
-                    <figcaption>The revised screen improves visual breathing room and guides attention more clearly.</figcaption>
+                    <figcaption>The revised layout introduces better visual breathing room and clearer hierarchy to guide user attention.</figcaption>
                   </figure>
                   <figure class="iteration-shot">
                     <img
                       src="image/refinement-after-02.jpg"
                       alt="After refinement screenshot two showing the updated interface state"
                     />
-                    <figcaption>Content blocks are simplified so users can understand the next action more quickly.</figcaption>
-                  </figure>
-                  <figure class="iteration-shot">
-                    <img
-                      src="image/refinement-after-03.jpg"
-                      alt="After refinement screenshot three showing the updated interface state"
-                    />
-                    <figcaption>The final revision strengthens readability and creates a calmer, more accessible interaction rhythm.</figcaption>
+                    <figcaption>The new AI-powered chat interface simplifies content blocks and clarifies the next step for users.</figcaption>
                   </figure>
                 </div>
               </section>
