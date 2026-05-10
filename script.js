@@ -633,7 +633,9 @@ const setupRevealAnimation = () => {
       });
     },
     {
-      threshold: 0.3,
+      // Large cards can never reach a high intersection ratio on short mobile viewports,
+      // so reveal them as soon as a small slice enters the screen.
+      threshold: 0.01,
       rootMargin: "0px 0px 6% 0px"
     }
   );
